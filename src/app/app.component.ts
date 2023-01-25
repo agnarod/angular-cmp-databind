@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'cmp-databind';
+  serverElements = [{type:'server',name:'TestServer', content:'Just a test'}];
+  newServerName = '';
+  newServerContent = '';
+
 }
