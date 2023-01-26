@@ -1,14 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ContentChild, ElementRef, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
   templateUrl: './server-element.component.html',
-  styleUrls: ['./server-element.component.css']
+  styleUrls: ['./server-element.component.css'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class ServerElementComponent implements OnInit {
 
-  @Input() element : { type:string, name:string , content: string};
+  @Input('server') element : { type:string, name:string , content: string};
 
+  @ContentChild('contentParagraph',{static:true}) paragraph: ElementRef;
   constructor(){
 
   }
